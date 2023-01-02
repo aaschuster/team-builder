@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import React, { useState } from 'react';
 import './App.css';
 import MemberList from './MemberList';
-import Form from './Form';
+import NewMemberForm from './NewMemberForm';
 
 function App() {
   const [ members, setMembers ] = useState([
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-        <Form/>
+        <NewMemberForm setMembers={setMembers} members={members}/>
         <MemberList members = {members}/>
     </div>
   );
