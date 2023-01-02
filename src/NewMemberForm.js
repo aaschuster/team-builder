@@ -13,11 +13,13 @@ const StyledForm = styled.form`
 
 export default function NewMemberForm ( { setMembers, members } ) {
 
-    const [ newMember, setNewMember ] = useState( {
+    const memberInitVals = {
         name: "",
         email: "",
         role: ""
-    } );
+    }
+
+    const [ newMember, setNewMember ] = useState(memberInitVals);
 
     function onChange ( evt ) {
         setNewMember({ ...newMember, [evt.target.name]: [evt.target.value ]});
@@ -25,9 +27,8 @@ export default function NewMemberForm ( { setMembers, members } ) {
 
     function onSubmit ( evt ) {
         evt.preventDefault();
-        console.log(newMember);
         setMembers( [ newMember, ...members] );
-
+        setNewMember(memberInitVals);
     }
 
     return(
@@ -55,6 +56,10 @@ export default function NewMemberForm ( { setMembers, members } ) {
                     <option>Equine redistribution specialist</option>
                     <option>Primary chicken dissection technician</option>
                     <option>General laboratory technician</option>
+                    <option>Feline aquisition specialist</option>
+                    <option>Canine redistribution coordinator</option>
+                    <option>Elephant nomenclature generation specialist</option>
+                    <option>International pigeon relations manager</option>
                 </select>
                 <input
                     type="submit"
